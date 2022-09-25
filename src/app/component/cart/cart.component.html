@@ -1,0 +1,78 @@
+<ng-container *ngIf="products.length !=0">
+  <div class="container m-head">
+    <div class="card-table">
+      <div class="cart-product">
+        <table class="table">
+          <thead>
+            <tr class="table-dark table-active">
+              <td class="heads" *ngFor="let head of heads; let i = index">{{head.title}}
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of products; let i = index">
+              <td><strong>{{i+1}}</strong></td>
+              <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 17ch;">
+                <strong>{{item.title}}</strong>
+              </td>
+              <td><img src="{{item.images[0]}}" alt=""></td>
+              <td>{{item.price}}</td>
+              <td><input type="number" [ngModel]="item.quantity" (change)="changeTotal($event)"></td>
+              <td>{{item.total}}</td>
+              <td>
+                <button (click)="removeItem(item)" class="btn btn-outline-danger btn-sm border-0 fs-5"><i
+                    class="fas fa-trash-alt"></i></button>
+              </td>
+            </tr>
+            <!-- <tr>
+              <td><strong>2</strong></td>
+              <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 17ch;">
+                <strong>Teshiart fawzy klawzy</strong>
+              </td>
+              <td><img src="http://www.google.com/" alt=""></td>
+              <td>12</td>
+              <td><input type="number" [ngModel]="1" (change)="changeTotal($event)"></td>
+              <td>12</td>
+              <td>
+                <button class="btn btn-outline-danger btn-sm border-0 fs-5"><i class="fas fa-trash-alt"></i></button>
+              </td>
+            </tr> -->
+            <tr class="table-dark">
+              <td colspan="3" class="align-items-center"><strong>Grand Total :</strong></td>
+              <td colspan="2"></td>
+              <td><strong>{{grandTotal | currency : 'USD' : 'symbol' : '1.0-0'}}</strong></td>
+              <td><button class="btn btn-outline-success p-1 fs-6 fw-bold" (click)="checkout()">Checkout</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="btns">
+      <button routerLink="/" class="btn btn-primary">Shop More</button>
+      <button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button>
+    </div>
+  </div>
+</ng-container>
+<!-- Empty Cart -->
+<ng-container *ngIf="products.length ==0">
+  <div class="container position-relative m-head">
+    <div *ngIf="alertMassage"
+      class="msg alert alert-success d-flex align-items-center justify-content-center gap-3 rounded-pill" role="alert">
+      <i style="width: 24px; color: #0f5132;" class="fas fa-check-circle"></i>
+      <div>
+        Your Order is <strong>Done</strong>.
+      </div>
+    </div>
+    <div class="card">
+      <h5 class="card-title">My Cart</h5>
+      <div class="center">
+        <img
+          src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+          alt="">
+        <h4>Your cart is empty!</h4>
+        <h6>Add item to it now</h6>
+        <button routerLink="/products" class="btn btn-success">Shop Now</button>
+      </div>
+    </div>
+  </div>
+</ng-container>

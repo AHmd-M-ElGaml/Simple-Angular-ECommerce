@@ -1,0 +1,115 @@
+// Categories
+.card-top {
+  margin-top: 57px;
+  & .item {
+    margin: 15px 0px;
+    text-align: center;
+    & .img {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #198754;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+        transition: all 0.2s ease;
+        & img {
+          width: 100%;
+          height: 100%;
+      }
+    }
+    & h6 {
+      margin: 6px 0px 0px;
+      font-size: 10px;
+      color: #fff;
+      background-color: #198754;
+      border-radius: 6px;
+      padding: 3px 8px;
+    }
+    &:hover .img {
+        border: 1px solid #198754;
+        cursor: pointer;
+    }
+    &:hover h6 {
+      background-color: #198754c9;
+      cursor: pointer;
+    }
+  }
+}
+// Products
+.card {
+  width: 250px;
+  padding: 12px;
+  border: 1px solid #00000033;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  &:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+  }
+  & h5 {
+    font-size: 14px;
+    font-weight: 800;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 17ch;
+  }
+  & .desc {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
+  }
+  & .price {
+    color: #198754;
+    margin-bottom: 6px;
+  }
+  & .img {
+    width: 100%;
+    height: 230px;
+    border: 1px solid #00000033;
+    border-radius: 4px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    & img {
+      width: 100%;
+      height: 100%;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        transition: 0.3s ease-in-out;
+        transform: scale(1.1);
+      }
+    }
+  }
+  & button {
+    color: #198754;
+    background-color: #1987544b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid #198754;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    &:hover {
+      color: #eee;
+      background-color: #198754;
+    }
+  }
+}
+// Alert
+.msg {
+  position: fixed;
+  z-index: 10;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  width: 75%;
+  transition: all 0.2s ease;
+  text-align: center;
+}

@@ -1,0 +1,125 @@
+// Table
+.m-head {
+  margin-top: 80px;
+}
+.card-table {
+  margin-top: 14px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #00000033;
+  border-radius: 4px;
+  width: 100%;
+  overflow-x: auto;
+  & .cart-product {
+    width: 100%;
+    min-width: 694px;
+  }
+  & table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0;
+    & .heads {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 16px auto;
+    }
+    & tr td {
+      width: fit-content;
+      vertical-align: middle;
+      overflow: hidden;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    & img {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+    }
+    & input {
+      width: 60px;
+      padding: 8px 4px 8px 12px;
+      border-radius: 4px;
+      border: 1px solid #555;
+      outline-color: #198754;
+    }
+  }
+}
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 20px;
+  & button {
+    padding: 10px 6px;
+  }
+}
+// Empty Cart
+.card {
+  height: 62vh;
+  margin: 25px;
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 32px;
+  & h5 {
+    width: fit-content;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    --webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    z-index: 10;
+  }
+  & .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    & img {
+      text-decoration: none;
+      color: inherit;
+      border: none;
+      outline: none;
+      height: 162px;
+      width: 250px;
+      margin: 20px 0px;
+    }
+    & .btn {
+    font-size: 14px !important;
+    margin-top: 20px !important;
+    font-weight: 400;
+    padding: 12px 72px;
+    border-radius: 3px !important;
+    }
+    & h4,
+    & h6 {
+      font-weight: 400;
+  }
+  }
+}
+.msg {
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  height: 50px;
+  width: fit-content;
+  transition: all 0.2s ease;
+  text-align: center;
+}
